@@ -1,0 +1,32 @@
+{
+  "name": "kauntah-svg",
+  "version": "0.0.0",
+  "author": "3846masa <3846masahiro+git@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/3846masa/kauntah-svg/issues"
+  },
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "fs-promise": "^2.0.0",
+    "koa": "^2.0.1",
+    "koa-compress": "^2.0.0",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "mongodb": "^2.2.24"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "homepage": "https://github.com/3846masa/kauntah-svg#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/3846masa/kauntah-svg.git"
+  },
+  "scripts": {
+    "start": "node --harmony-async-await index.js"
+  }
+}

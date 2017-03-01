@@ -1,0 +1,19 @@
+{
+  "name": "Kauntah SVG",
+  "description": "Very easiest access counter.",
+  "keywords": [
+    "access counter",
+    "svg"
+  ],
+  "homepage": "https://kauntah-svg.herokuapp.com",
+  "repository": "https://github.com/3846masa/kauntah-svg",
+  "success_url": "/",
+  "env": {
+    "MONGODB_URL": {
+      "description": "mongodb URL (required when you don't use mongolab addons)"
+    }
+  },
+  "addons": [
+    "mongolab:sandbox"
+  ]
+}

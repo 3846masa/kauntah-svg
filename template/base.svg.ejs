@@ -1,0 +1,12 @@
+<svg width="<%= 68 * length %>px" height="150px" version="1.1" baseProfile="full"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <defs>
+    <% for (var idx = 0; idx < image.length; idx += 1) { %>
+      <image xlink:href="data:image/png;base64,<%= image[idx] %>"
+      id="<%= idx %>" x="0" y="0" height="150px" width="68px" />
+    <% } %>
+  </defs>
+  <% for (var idx = 0; idx < length; idx += 1) { %>
+    <use x="<%= 68 * idx %>px" y="0" xlink:href="#<%= number[idx] %>" />
+  <% } %>
+</svg>
