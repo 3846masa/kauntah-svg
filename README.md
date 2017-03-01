@@ -56,4 +56,12 @@ PRs accepted.
 
 ## License
 
+### Programs
+
 [MIT © 3846masa](https://3846masa.mit-license.org)
+
+### Cats images
+
+[© KK'ｓWS](https://web.archive.org/web/20090831104303/http://kokagex.hp.infoseek.co.jp/)
+
+> 商用以外なら魔改造でも文字変えでもアイコンでもなんでもどうぞー（´∀｀三´∀｀）
