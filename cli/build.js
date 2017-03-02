@@ -15,7 +15,7 @@ const compiledHTML =
 const $ = cheerio.load(compiledHTML);
 $('img[alt="kauntah"]').attr('src', '/counter.svg');
 
-fs.writeFileSync(path.join(__dirname, '../public/index.html'), beautify($.html({ decodeEntities: false }), {
+fs.writeFileSync(path.join(__dirname, '../public/index.html'), beautify($.html(), {
   indent_size: 2,
   unescape_strings: true,
 }));
