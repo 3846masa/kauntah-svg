@@ -23,9 +23,17 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg)
 
-### Demo
+**DEMO** | https://kauntah-svg.herokuapp.com
 
-Use https://kauntah-svg.herokuapp.com.
+### now
+
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/3846masa/kauntah-svg&env=MONGODB_URL)
+
+```sh
+now -e MONGODB_URL="mongodb://{user}:{pass}@mongo.example.com/kauntah" 3846masa/kauntah-svg
+```
+
+**DEMO** | https://kauntah-svg.now.sh
 
 ## Usage
 
