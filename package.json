@@ -14,7 +14,11 @@
     "koa-static": "^3.0.0",
     "mongodb": "^2.2.24"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "js-beautify": "^1.6.11",
+    "marked": "^0.3.6"
+  },
   "engines": {
     "node": "^7.6.0"
   },
@@ -27,6 +31,7 @@
     "url": "git+ssh://git@github.com/3846masa/kauntah-svg.git"
   },
   "scripts": {
+    "build": "node cli/build.js",
     "start": "node --harmony-async-await index.js"
   }
 }
