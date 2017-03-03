@@ -1,7 +1,13 @@
 ---
+declared-services:
+  MongoLab-Kauntah:
+    label: mongolab
+    plan: sandbox
 applications:
 - name: kauntah-svg
   host: kauntah-svg
   memory: 128M
-  env:
-    MONGODB_URL: ''
+  buildpack: sdk-for-nodejs
+  instances: 1
+  services:
+    - MongoLab-Kauntah
