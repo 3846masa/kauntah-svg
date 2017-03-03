@@ -42,7 +42,7 @@
 
 [BluemixButton]: https://bluemix.net/deploy/button.png
 [BluemixDeploy]: https://bluemix.net/deploy?repository=https://github.com/3846masa/kauntah-svg
-[Bluemix Demo]:
+[Bluemix Demo]: https://kauntah-svg.mybluemix.net
 
 ### Docker
 
