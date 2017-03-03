@@ -19,21 +19,58 @@
 
 ## Install
 
-### Heroku
+###
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg)
+### PaaS
 
-**DEMO** | https://kauntah-svg.herokuapp.com
+|             Heroku              |             Azure             |            now            |              Bluemix              |
+| :-----------------------------: | :---------------------------: | :-----------------------: | :-------------------------------: |
+| [![HerokuButton]][HerokuDeploy] | [![AzureButton]][AzureDeploy] | [![nowButton]][nowDeploy] | [![BluemixButton]][BluemixDeploy] |
+|          [Heroku Demo]          |         [Azure Demo]          |        [now Demo]         |          [Bluemix Demo]           |
 
-### now
+[HerokuButton]: https://www.herokucdn.com/deploy/button.svg
+[HerokuDeploy]: https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg
+[Heroku Demo]: https://kauntah-svg.herokuapp.com
 
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/3846masa/kauntah-svg&env=MONGODB_URL)
+[AzureButton]: https://azuredeploy.net/deploybutton.svg
+[AzureDeploy]: https://azuredeploy.net/?repository=https://github.com/3846masa/kauntah-svg
+[Azure Demo]: https://kauntah-svg.azurewebsites.net
+
+[nowButton]: https://deploy.now.sh/static/button.svg
+[nowDeploy]: https://deploy.now.sh/?repo=https://github.com/3846masa/kauntah-svg&env=MONGODB_URL
+[now Demo]: https://kauntah-svg.now.sh
+
+[BluemixButton]: https://bluemix.net/deploy/button.png
+[BluemixDeploy]: https://bluemix.net/deploy?repository=https://github.com/3846masa/kauntah-svg
+[Bluemix Demo]:
+
+### Docker
+
+[![Docker Hub](https://img.shields.io/badge/docker%20build-3846masa%2Fkauntah--svg-blue.svg?style=flat-square)](https://hub.docker.com/r/3846masa/kauntah-svg/)
 
 ```sh
-now -e MONGODB_URL="mongodb://{user}:{pass}@mongo.example.com/kauntah" 3846masa/kauntah-svg
+docker run --name some-mongo -d mongo
+
+docker run -d -p 3000:3000 --name kauntah-svg \
+  --link some-mongo:mongodb 3846masa/kauntah-svg
 ```
 
-**DEMO** | https://kauntah-svg.now.sh
+### Arukas
+
+[![Arukas](https://i.imgur.com/yfUXSkM.png)
+
+```sh
+docker run --rm \
+  -e ARUKAS_JSON_API_TOKEN="<API_TOKEN>" \
+  -e ARUKAS_JSON_API_SECRET="<SECRET_KEY>" \
+    arukasio/arukas run \
+      --instances=1 \
+      --mem=256 \
+      --ports=3000:tcp \
+      3846masa/kauntah-svg
+```
+
+**DEMO** | https://kauntah-svg.arukascloud.io
 
 ## Usage
 

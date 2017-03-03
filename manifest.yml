@@ -1,0 +1,7 @@
+---
+applications:
+- name: kauntah-svg
+  host: kauntah-svg
+  memory: 128M
+  env:
+    MONGODB_URL: ''

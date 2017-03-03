@@ -44,18 +44,64 @@
       <li><a href="#license">License</a></li>
     </ul>
     <h2 id="install">Install</h2>
-    <h3 id="heroku">Heroku</h3>
+    <p>###</p>
+    <h3 id="paas">PaaS</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:center">Heroku</th>
+          <th style="text-align:center">Azure</th>
+          <th style="text-align:center">now</th>
+          <th style="text-align:center">Bluemix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center">
+            <a href="https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg"><img src="https://www.herokucdn.com/deploy/button.svg" alt="HerokuButton"></a>
+          </td>
+          <td style="text-align:center">
+            <a href="https://azuredeploy.net/?repository=https://github.com/3846masa/kauntah-svg"><img src="https://azuredeploy.net/deploybutton.svg" alt="AzureButton"></a>
+          </td>
+          <td style="text-align:center">
+            <a href="https://deploy.now.sh/?repo=https://github.com/3846masa/kauntah-svg&amp;env=MONGODB_URL"><img src="https://deploy.now.sh/static/button.svg" alt="nowButton"></a>
+          </td>
+          <td style="text-align:center">
+            <a href="https://bluemix.net/deploy?repository=https://github.com/3846masa/kauntah-svg"><img src="https://bluemix.net/deploy/button.png" alt="BluemixButton"></a>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align:center"><a href="https://kauntah-svg.herokuapp.com">Heroku Demo</a></td>
+          <td style="text-align:center"><a href="https://kauntah-svg.azurewebsites.net">Azure Demo</a></td>
+          <td style="text-align:center"><a href="https://kauntah-svg.now.sh">now Demo</a></td>
+          <td style="text-align:center">[Bluemix Demo]</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>[Bluemix Demo]:</p>
+    <h3 id="docker">Docker</h3>
     <p>
-      <a href="https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+      <a href="https://hub.docker.com/r/3846masa/kauntah-svg/"><img src="https://img.shields.io/badge/docker%20build-3846masa%2Fkauntah--svg-blue.svg?style=flat-square" alt="Docker Hub"></a>
     </p>
-    <p><strong>DEMO</strong> | <a href="https://kauntah-svg.herokuapp.com">https://kauntah-svg.herokuapp.com</a></p>
-    <h3 id="now">now</h3>
-    <p>
-      <a href="https://deploy.now.sh/?repo=https://github.com/3846masa/kauntah-svg&amp;env=MONGODB_URL"><img src="https://deploy.now.sh/static/button.svg" alt="Deploy to now"></a>
-    </p>
-    <pre><code class="lang-sh">now -e MONGODB_URL=&quot;mongodb://{user}:{pass}@mongo.example.com/kauntah&quot; 3846masa/kauntah-svg
+    <pre><code class="lang-sh">docker run --name some-mongo -d mongo
+
+docker run -d -p 3000:3000 --name kauntah-svg \
+  --link some-mongo:mongodb 3846masa/kauntah-svg
 </code></pre>
-    <p><strong>DEMO</strong> | <a href="https://kauntah-svg.now.sh">https://kauntah-svg.now.sh</a></p>
+    <h3 id="arukas">Arukas</h3>
+    <p>
+      <a href="https://arukas.io/en/"><img src="https://i.imgur.com/yfUXSkM.png" alt="Arukas"></a>
+    </p>
+    <pre><code class="lang-sh">docker run --rm \
+  -e ARUKAS_JSON_API_TOKEN=&quot;&lt;API_TOKEN&gt;&quot; \
+  -e ARUKAS_JSON_API_SECRET=&quot;&lt;SECRET_KEY&gt;&quot; \
+    arukasio/arukas run \
+      --instances=1 \
+      --mem=256 \
+      --ports=3000:tcp \
+      3846masa/kauntah-svg
+</code></pre>
+    <p><strong>DEMO</strong> | <a href="https://kauntah-svg.arukascloud.io">https://kauntah-svg.arukascloud.io</a></p>
     <h2 id="usage">Usage</h2>
     <p>Insert this html tag to your page.</p>
     <pre><code class="lang-html">&lt;img src=&quot;https://yourdomain.example.com/counter.svg&quot;&gt;
