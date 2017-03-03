@@ -32,6 +32,6 @@
   },
   "scripts": {
     "build": "node cli/build.js",
-    "start": "node --harmony-async-await index.js"
+    "start": "node index.js"
   }
 }
