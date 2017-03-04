@@ -8,13 +8,25 @@ const KoaCompress = require('koa-compress');
 
 const fs = require('fs-promise');
 const ejs = require('ejs');
-const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient;
+
+const cfenv = require('cfenv').getAppEnv();
 
 // Configs
 const ENV = process.env;
 const PORT = ENV.PORT || 8000;
 const MONGO_URL =
-  ENV.MONGODB_URL || ENV.MONGODB_URI ||
+  // Environment
+  ENV.MONGODB_URL ||
+  // Heroku
+  ENV.MONGODB_URI ||
+  // Bluemix
+  (
+    cfenv.getService(/mongolab/ig) ?
+    cfenv.getService(/mongolab/ig).credentials.uri :
+    null
+  ) ||
+  // Docker Link
   (
     (ENV.MONGODB_PORT_27017_TCP_ADDR && ENV.MONGODB_PORT_27017_TCP_PORT) ?
     `mongodb://${ENV.MONGODB_PORT_27017_TCP_ADDR}:${ENV.MONGODB_PORT_27017_TCP_PORT}/kauntah` :
