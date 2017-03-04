@@ -57,7 +57,7 @@ docker run -d -p 3000:3000 --name kauntah-svg \
 
 ### Arukas
 
-[![Arukas](https://i.imgur.com/yfUXSkM.png)
+[![Arukas](https://i.imgur.com/yfUXSkM.png)](https://arukas.io/en/)
 
 ```sh
 docker run --rm \
