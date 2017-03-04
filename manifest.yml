@@ -1,8 +1,8 @@
 ---
 declared-services:
   MongoLab-Kauntah:
-    label: mongolab
-    plan: sandbox
+    label: mongodb
+    plan: 100
 applications:
 - name: kauntah-svg
   host: kauntah-svg
