@@ -22,8 +22,8 @@ const MONGO_URL =
   ENV.MONGODB_URI ||
   // Bluemix
   (
-    cfenv.getService(/mongolab/ig) ?
-    cfenv.getService(/mongolab/ig).credentials.uri :
+    cfenv.getService('MongoLab-Kauntah') ?
+    cfenv.getService('MongoLab-Kauntah').credentials.uri :
     null
   ) ||
   // Docker Link
