@@ -21,11 +21,7 @@ const MONGO_URL =
   // Heroku
   ENV.MONGODB_URI ||
   // Bluemix
-  (
-    cfenv.getService('MongoLab-Kauntah') ?
-    cfenv.getService('MongoLab-Kauntah').credentials.uri :
-    null
-  ) ||
+  cfenv.getServiceURL('MongoLab-Kauntah') ||
   // Docker Link
   (
     (ENV.MONGODB_PORT_27017_TCP_ADDR && ENV.MONGODB_PORT_27017_TCP_PORT) ?
