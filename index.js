@@ -10,8 +10,6 @@ const fs = require('fs-promise');
 const ejs = require('ejs');
 const MongoClient = require('mongodb').MongoClient;
 
-const cfenv = require('cfenv').getAppEnv();
-
 // Configs
 const ENV = process.env;
 const PORT = ENV.PORT || 8000;
@@ -21,7 +19,11 @@ const MONGO_URL =
   // Heroku
   ENV.MONGODB_URI ||
   // Bluemix
-  cfenv.getServiceURL('MongoLab-Kauntah') ||
+  (
+    ENV.VCAP_APPLICATION ?
+    require('cfenv').getAppEnv().getServiceURL('MongoLab-Kauntah') :
+    null
+  ) ||
   // Docker Link
   (
     (ENV.MONGODB_PORT_27017_TCP_ADDR && ENV.MONGODB_PORT_27017_TCP_PORT) ?
