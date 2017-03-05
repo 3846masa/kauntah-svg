@@ -37,14 +37,14 @@ const MONGO_URL =
   }
 
   // SVG template
-  const template = ejs.compile(await fs.readFile(path.join(__dirname, './template/base.svg.ejs'), 'utf8'));
+  const template = ejs.compile(await fs.readFile(path.join(__dirname, '../template/base.svg.ejs'), 'utf8'));
   const baseImage = {
     blueCats: [],
     colorCats: [],
   };
   for (let idx = 0; idx <= 9; idx += 1) {
-    baseImage.blueCats.push(await fs.readFile(path.join(__dirname, `./template/blue-cats/${idx}.png`), 'base64'));
-    baseImage.colorCats.push(await fs.readFile(path.join(__dirname, `./template/color-cats/${idx}.png`), 'base64'));
+    baseImage.blueCats.push(await fs.readFile(path.join(__dirname, `../template/blue-cats/${idx}.png`), 'base64'));
+    baseImage.colorCats.push(await fs.readFile(path.join(__dirname, `../template/color-cats/${idx}.png`), 'base64'));
   }
 
   // Koa instance
@@ -87,7 +87,7 @@ const MONGO_URL =
   // Koa
   app.use(KoaCompress());
   app.use(router.routes());
-  app.use(KoaStatic(path.join(__dirname, './public')));
+  app.use(KoaStatic(path.join(__dirname, '../public')));
   app.listen(PORT, () => {
     console.log(`Linstening on ${PORT}.`);
   });
