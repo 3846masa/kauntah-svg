@@ -53,7 +53,6 @@ const MONGO_URL =
 
   // Mongodb instance
   const db = await MongoClient.connect(MONGO_URL);
-  db.createCollection('kauntah');
   const collection = await db.createCollection('kauntah');
 
   // Routing
