@@ -19,8 +19,6 @@
 
 ## Install
 
-###
-
 ### PaaS
 
 |             Heroku              |             Azure             |            now            |              Bluemix              |
