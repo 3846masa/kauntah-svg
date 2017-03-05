@@ -77,7 +77,7 @@ docker run --rm \
 Insert this html tag to your page.
 
 ```html
-<img src="https://yourdomain.example.com/counter.svg">
+<img src="https://<YOUR_KAUNTAH_DOMAIN>/counter.svg">
 ```
 
 That's all.
