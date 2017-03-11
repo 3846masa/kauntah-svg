@@ -85,6 +85,12 @@ const MONGO_URL =
   });
 
   // Koa
+  if (!ENV.DISABLE_NO_INDEX) {
+    app.use(async (ctx, next) => {
+      ctx.set('X-Robots-Tag', 'noindex');
+      await next();
+    });
+  }
   app.use(KoaCompress());
   app.use(router.routes());
   app.use(KoaStatic(path.join(__dirname, '../public')));
