@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "cheerio": "^0.22.0",
+    "eslint": "^3.19.0",
     "js-beautify": "^1.6.11",
     "marked": "^0.3.6"
   },

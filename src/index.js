@@ -52,7 +52,7 @@ const MONGO_URL =
   const router = new KoaRouter();
 
   // Routing
-  router.get('/counter.svg', async (ctx, next) => {
+  router.get('/counter.svg', async (ctx, _next) => {
     let count = 0;
 
     const origin = url.parse(ctx.headers['referer'] || '').host;
