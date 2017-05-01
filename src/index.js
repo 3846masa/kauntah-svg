@@ -51,10 +51,6 @@ const MONGO_URL =
   const app = new Koa();
   const router = new KoaRouter();
 
-  // Mongodb instance
-  const db = await MongoClient.connect(MONGO_URL);
-  const collection = await db.createCollection('kauntah');
-
   // Routing
   router.get('/counter.svg', async (ctx, next) => {
     let count = 0;
@@ -63,6 +59,9 @@ const MONGO_URL =
     if (!origin) {
       count = 1234567890;
     } else {
+      // Mongodb instance
+      const db = await MongoClient.connect(MONGO_URL);
+      const collection = await db.createCollection('kauntah');
       const data = await collection.findOneAndUpdate(
         { origin },
         { $inc: { count: 1 }, $set: { origin } },
