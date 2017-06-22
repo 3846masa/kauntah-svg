@@ -53,10 +53,8 @@ const MONGO_URL =
 
   // Mongodb instance
   const db = await MongoClient.connect(MONGO_URL, {
-    server: {
-      reconnectTries : Number.MAX_VALUE,
-      reconnectInterval: 500
-    }
+    reconnectTries : Number.MAX_VALUE,
+    reconnectInterval: 500
   });
   const collection = await db.createCollection('kauntah');
 
