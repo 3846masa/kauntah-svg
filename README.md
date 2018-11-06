@@ -21,10 +21,10 @@
 
 ### PaaS
 
-|             Heroku              |             Azure             |            now            |              Bluemix              |
+| Heroku                          | Azure                         | now                       | Bluemix                           |
 | :-----------------------------: | :---------------------------: | :-----------------------: | :-------------------------------: |
 | [![HerokuButton]][HerokuDeploy] | [![AzureButton]][AzureDeploy] | [![nowButton]][nowDeploy] | [![BluemixButton]][BluemixDeploy] |
-|          [Heroku Demo]          |         [Azure Demo]          |        [now Demo]         |          [Bluemix Demo]           |
+| [Heroku Demo]                   | [Azure Demo]                  | [now Demo]                | [Bluemix Demo]                    |
 
 [HerokuButton]: https://www.herokucdn.com/deploy/button.svg
 [HerokuDeploy]: https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg
@@ -46,7 +46,7 @@
 
 [![Docker Hub](https://img.shields.io/badge/docker%20build-3846masa%2Fkauntah--svg-blue.svg?style=flat-square)](https://hub.docker.com/r/3846masa/kauntah-svg/)
 
-```sh
+```bash
 docker run --name some-mongo -d mongo
 
 docker run -d -p 3000:3000 --name kauntah-svg \
