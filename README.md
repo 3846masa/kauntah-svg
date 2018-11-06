@@ -21,10 +21,10 @@
 
 ### PaaS
 
-|             Heroku              |             Azure             |            now            |              Bluemix              |
+| Heroku                          | Azure                         | now                       | Bluemix                           |
 | :-----------------------------: | :---------------------------: | :-----------------------: | :-------------------------------: |
 | [![HerokuButton]][HerokuDeploy] | [![AzureButton]][AzureDeploy] | [![nowButton]][nowDeploy] | [![BluemixButton]][BluemixDeploy] |
-|          [Heroku Demo]          |         [Azure Demo]          |        [now Demo]         |          [Bluemix Demo]           |
+| [Heroku Demo]                   | [Azure Demo]                  | [now Demo]                | [Bluemix Demo]                    |
 
 [HerokuButton]: https://www.herokucdn.com/deploy/button.svg
 [HerokuDeploy]: https://heroku.com/deploy?template=https://github.com/3846masa/kauntah-svg
@@ -46,29 +46,12 @@
 
 [![Docker Hub](https://img.shields.io/badge/docker%20build-3846masa%2Fkauntah--svg-blue.svg?style=flat-square)](https://hub.docker.com/r/3846masa/kauntah-svg/)
 
-```sh
+```bash
 docker run --name some-mongo -d mongo
 
 docker run -d -p 3000:3000 --name kauntah-svg \
   --link some-mongo:mongodb 3846masa/kauntah-svg
 ```
-
-### Arukas
-
-[![Arukas](https://i.imgur.com/yfUXSkM.png)](https://arukas.io/en/)
-
-```sh
-docker run --rm \
-  -e ARUKAS_JSON_API_TOKEN="<API_TOKEN>" \
-  -e ARUKAS_JSON_API_SECRET="<SECRET_KEY>" \
-    arukasio/arukas run \
-      --instances=1 \
-      --mem=256 \
-      --ports=3000:tcp \
-      3846masa/kauntah-svg
-```
-
-**DEMO** | https://kauntah-svg.arukascloud.io
 
 ## Usage
 
