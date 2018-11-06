@@ -53,23 +53,6 @@ docker run -d -p 3000:3000 --name kauntah-svg \
   --link some-mongo:mongodb 3846masa/kauntah-svg
 ```
 
-### Arukas
-
-[![Arukas](https://i.imgur.com/yfUXSkM.png)](https://arukas.io/en/)
-
-```sh
-docker run --rm \
-  -e ARUKAS_JSON_API_TOKEN="<API_TOKEN>" \
-  -e ARUKAS_JSON_API_SECRET="<SECRET_KEY>" \
-    arukasio/arukas run \
-      --instances=1 \
-      --mem=256 \
-      --ports=3000:tcp \
-      3846masa/kauntah-svg
-```
-
-**DEMO** | https://kauntah-svg.arukascloud.io
-
 ## Usage
 
 Insert this html tag to your page.
