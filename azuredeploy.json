@@ -14,20 +14,7 @@
     },
     "sku": {
       "type": "string",
-      "allowedValues": [
-        "F1",
-        "D1",
-        "B1",
-        "B2",
-        "B3",
-        "S1",
-        "S2",
-        "S3",
-        "P1",
-        "P2",
-        "P3",
-        "P4"
-      ],
+      "allowedValues": ["F1", "D1", "B1", "B2", "B3", "S1", "S2", "S3", "P1", "P2", "P3", "P4"],
       "defaultValue": "F1"
     },
     "mongoDbUrl": {
@@ -58,9 +45,7 @@
       "name": "[parameters('siteName')]",
       "type": "Microsoft.Web/sites",
       "location": "[parameters('siteLocation')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-      ],
+      "dependsOn": ["[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"],
       "properties": {
         "serverFarmId": "[parameters('hostingPlanName')]"
       },
@@ -69,9 +54,7 @@
           "apiVersion": "2015-08-01",
           "type": "config",
           "name": "web",
-          "dependsOn": [
-            "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
-          ],
+          "dependsOn": ["[concat('Microsoft.Web/Sites/', parameters('siteName'))]"],
           "properties": {
             "phpVersion": "",
             "webSocketsEnabled": true
@@ -81,11 +64,9 @@
           "apiVersion": "2015-08-01",
           "name": "appsettings",
           "type": "config",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
-          ],
+          "dependsOn": ["[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"],
           "properties": {
-            "WEBSITE_NODE_DEFAULT_VERSION": "7.6.0",
+            "WEBSITE_NODE_DEFAULT_VERSION": "10.13.0",
             "MONGODB_URL": "[parameters('mongoDbUrl')]"
           }
         },
