@@ -1,7 +1,7 @@
 const ENV = process.env;
 
 export const DISABLE_NO_INDEX = ENV.DISABLE_NO_INDEX || undefined;
-export const PORT = ENV.PORT ? parseInt(ENV.PORT, 10) : 8000;
+export const PORT = ENV.PORT || '8000';
 export const MONGO_URI =
   // Environment
   ENV.MONGODB_URL ||

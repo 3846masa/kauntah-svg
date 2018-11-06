@@ -22,9 +22,17 @@ async function main() {
     });
   }
 
-  app.listen(ENV.PORT, '0.0.0.0', () => {
-    console.log(`Listening on ${ENV.PORT}.`);
-  });
+  const PORT_NUMBER = parseInt(ENV.PORT, 10);
+  if (isFinite(PORT_NUMBER)) {
+    app.listen(PORT_NUMBER, '0.0.0.0', () => {
+      console.log(`Listening on ${ENV.PORT}.`);
+    });
+  } else {
+    // For Azure
+    app.listen(ENV.PORT as string, () => {
+      console.log(`Listening on ${ENV.PORT}.`);
+    });
+  }
 }
 
 main().catch((err) => console.error(err));
