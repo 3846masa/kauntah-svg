@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "env": {
+    "MONGO_URI": "@kauntah-svg-mongo-uri"
+  },
+  "functions": {
+    "api/counter.ts": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/api/counter/",
+      "destination": "/counter.svg"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/counter.svg",
+      "destination": "/api/counter"
+    }
+  ]
+}

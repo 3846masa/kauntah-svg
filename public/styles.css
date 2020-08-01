@@ -1,0 +1,17 @@
+@import url('https://unpkg.com/normalize.css@8.0.1/normalize.css');
+@import url('https://unpkg.com/github-markdown-css@4.0.0/github-markdown.css');
+@import url('https://unpkg.com/highlight.js@10.1.2/styles/github.css');
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
+}
